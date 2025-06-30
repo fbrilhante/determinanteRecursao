@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/44116183/randomly-generating-a-matrix-in-golang - 22 junho 
+https://pkg.go.dev/math/rand#Rand.Seed - 22 junho
+https://www.geeksforgeeks.org/software-engineering/dont-repeat-yourselfdry-in-software-development/ - 27 junho
