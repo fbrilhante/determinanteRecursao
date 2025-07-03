@@ -6,3 +6,4 @@ https://medium.com/@cacmscdm/code-optimizations-advantages-quicker-execution-les
 https://www.techtarget.com/whatis/definition/log-log-file - 02 de julho
 https://awebytes.wordpress.com/2021/10/30/golang-notas-data-science-basico/ - 02 de julho
 https://www.geeksforgeeks.org/go-language/how-to-copy-one-slice-into-another-slice-in-golang/ -02 de julho
+https://github.com/go-echarts/go-echarts - 02 de julho

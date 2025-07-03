@@ -35,6 +35,8 @@ func TempoExecucao(){
 		for contRepeticoes=0;contRepeticoes<repeticoesTotais;contRepeticoes++{
 			matrizOriginal=matriz.CriarMatrizVazia(ordem)
 			matriz.IniciaMatrizRandomica(matrizOriginal)
+			fmt.Printf("\nMatriz Randomica(Repeticao %d):\n",contRepeticoes+1)
+			matriz.ImprimeMatriz(matrizOriginal)
 			copiaBaseline=matriz.CopiarMatriz(matrizOriginal)
 			copiaReforged=matriz.CopiarMatriz(matrizOriginal)
 			

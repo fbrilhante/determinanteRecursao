@@ -60,7 +60,7 @@ func DetOrdemNReforged(mat [][]int) int{
 				}
 
 				CopiaMatrizMaiorParaMenor(mat,matMenor,maisZeroL,contC)
-				detTemp=Determinante(matMenor)
+				detTemp=DeterminanteReforged(matMenor)
 				resposta=resposta+(cofator*sinal*detTemp)
 			}
 		}
