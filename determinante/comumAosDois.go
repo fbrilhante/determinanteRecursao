@@ -1,6 +1,6 @@
 package determinante 
 
-import "fmt"
+//import "fmt"
 
 func VerificaQuadradaOrdem(mat [][]int) (bool, int) {
 	var numLinhas int
@@ -63,34 +63,5 @@ func DetOrdem2(mat [][]int) int{
 	diagonalP = mat[0][0] * mat[1][1]		
 	diagonalI = mat[1][0] * mat[0][1]		
 	return (diagonalP - diagonalI)
-}
-
-func Determinante(mat [][]int) int{
-	var ordem int
-	var ehQuadrada bool
-	var det int
-
-	ehQuadrada, ordem = VerificaQuadradaOrdem(mat)
-	det = 0
-	if(ehQuadrada){		
-		switch (ordem) {
-		    case 1:
-		        fmt.Println("Ordem 1")
-		    	det = DetOrdem1(mat)
-		    case 2:
-		    	fmt.Println("Ordem 2")
-		    	det = DetOrdem2(mat)
-		    default: 
-		        fmt.Println("Ordem ", ordem)
-		    	det = DetOrdemN(mat)
-			
-		}
-		//matriz.IniciaMatrizRandomica(mat)
-		fmt.Println("Det ", det)
-		
-	} else {
-		fmt.Println("Matriz nao eh quadrada!! retornando 0")
-	}
-	return det
 }
 

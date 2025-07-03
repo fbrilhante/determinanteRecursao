@@ -1,5 +1,7 @@
 package determinante 
 
+import "fmt"
+
 func ProcuradorDeZeros(mat [][]int)(int,int){
 	var ZeroPorLinha []int 
 	var ZeroPorColuna []int 
@@ -36,9 +38,11 @@ func ProcuradorDeZeros(mat [][]int)(int,int){
 		return maxLinha,maxColuna	
 }
 
-func DetOrdemNReforged(mat [][]int,maisZeroL int, maisZeroC int) int{
-	var sinal,cofator,detTemp,resposta,contL,contC,numL,numC,cont int
+
+func DetOrdemNReforged(mat [][]int) int{
+	var sinal,cofator,detTemp,resposta,contL,contC,numL,numC,cont,maisZeroL,maisZeroC int
 	var matMenor [][]int
+	maisZeroL,maisZeroC = ProcuradorDeZeros(mat)
 	numL = len(mat) 
 	numC = len(mat[0])
 
@@ -63,24 +67,53 @@ func DetOrdemNReforged(mat [][]int,maisZeroL int, maisZeroC int) int{
 	}else{
 		fmt.Printf("o Indice da colunas com mais zeros é %d \n",maisZeroC)
 		for contL=0;contL<numL;contL++{
-			cofator=mat[maiszeroC][contL]
+			cofator=mat[contL][maisZeroC]
 			if cofator !=0{
-				sinal = CalculaSinal(maisZeroC,contL)
+				sinal = CalculaSinal(contL,maisZeroC)
 
 				//criar matriz menor 
 				matMenor=make([][]int,numL-1)
 				for cont=0;cont<numL-1;cont++{
-					matMenor[cont]=make([]int,numL-1 )
+					matMenor[cont]=make([]int,numC-1)
 				}
-				CopiaMatrizMaiorParaMenor(mat,matMenor,maisZeroC,contL)
-				detTemp=Determinante(matMenor)
+				CopiaMatrizMaiorParaMenor(mat,matMenor,contL,maisZeroC)
+				detTemp=DeterminanteReforged(matMenor)
 				resposta=resposta+(cofator*sinal*detTemp)
 			}
 		}
 	}
 	return resposta
 }
+
+func DeterminanteReforged(mat [][]int) int{
+	var ordem int
+	var ehQuadrada bool
+	var det int
+
+	ehQuadrada, ordem = VerificaQuadradaOrdem(mat)
+	det = 0
+	if(ehQuadrada){		
+		switch (ordem) {
+		    case 1:
+		        fmt.Println("Ordem 1")
+		    	det = DetOrdem1(mat)
+		    case 2:
+		    	fmt.Println("Ordem 2")
+		    	det = DetOrdem2(mat)
+		    default: 
+		        fmt.Println("Ordem ", ordem)
+		    	det = DetOrdemNReforged(mat)
+			
+		}
+		//matriz.IniciaMatrizRandomica(mat)
+		fmt.Println("Det ", det)
 		
+	} else {
+		fmt.Println("Matriz nao eh quadrada!! retornando 0")
+	}
+	return det
+}
+
 
 
 

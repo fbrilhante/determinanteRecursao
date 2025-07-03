@@ -3,6 +3,7 @@ package matriz
 import(
 	"math/rand"
 	"time"
+	"fmt"
 )
 
 func CriarMatrizVazia(ordem int)[][]int{
@@ -27,4 +28,28 @@ func IniciaMatrizRandomica(mat [][]int){
 	}
 }
 
+func ImprimeMatriz(mat [][]int){ 
+          var contI int
+          var contJ int   
+  	  for contI = 0; contI < len(mat); contI++ {
+            	for contJ = 0; contJ < len(mat[0]); contJ++ {
+            		fmt.Print(mat[contI][contJ]," ")
+	  	}
+	  	fmt.Println()
+	  }
+ }
 
+func CopiarMatriz(matrizFonte [][]int) [][]int{
+	var numL int 
+	var numC int
+	var copia [][]int
+	var contI int 
+	numL=len(matrizFonte)
+	numC=len(matrizFonte[0])
+	copia=make([][]int,numL)
+	for contI=0;contI<numL;contI++{
+		copia[contI]=make([]int,numC)
+		copy(copia[contI],matrizFonte[contI])
+	}
+	return copia
+}

@@ -1,3 +1,8 @@
 https://stackoverflow.com/questions/44116183/randomly-generating-a-matrix-in-golang - 22 junho 
 https://pkg.go.dev/math/rand#Rand.Seed - 22 junho
 https://www.geeksforgeeks.org/software-engineering/dont-repeat-yourselfdry-in-software-development/ - 27 junho
+https://medium.com/@hcode.tech/how-code-optimization-saves-businesses-money-ff9c5ce3b941 - 01 de julho
+https://medium.com/@cacmscdm/code-optimizations-advantages-quicker-execution-less-resource-consumption-and-better-user-7681d2f385f3 -01 de julho
+https://www.techtarget.com/whatis/definition/log-log-file - 02 de julho
+https://awebytes.wordpress.com/2021/10/30/golang-notas-data-science-basico/ - 02 de julho
+https://www.geeksforgeeks.org/go-language/how-to-copy-one-slice-into-another-slice-in-golang/ -02 de julho
