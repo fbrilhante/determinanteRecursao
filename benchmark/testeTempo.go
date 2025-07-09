@@ -7,14 +7,23 @@ import (
 	"experimentoMatriz/determinante"
 )
 
-func TempoExecucao(){
+
+type ResultadosBenchmark struct {
+	Ordens        []int
+	TempoBaseline []int
+	TempoReforged []int
+}
+
+func TempoExecucao()ResultadosBenchmark{
 	var ordens []int 
 	var matrizOriginal [][]int
 	var copiaBaseline [][]int
 	var copiaReforged [][]int 
-	var tempoBaseline []int64
-	var tempoReforged []int64
-	var tempoExperimento int64
+	var tempoBaseline []int
+	var tempoReforged []int
+	var tempoExperimento int
+	var detBaseline int 
+	var detOtimizada int 
 	var contOrdem int 
 	var contRepeticoes int 
 	var repeticoesTotais int
@@ -24,11 +33,11 @@ func TempoExecucao(){
 	
 	
 	
-	//ordens=[]int{3,5,7,9,11}
-	ordens=[]int{3}
+	ordens=[]int{3,5,7,9,11}
+	//ordens=[]int{3}
 	repeticoesTotais=3
-	tempoBaseline=make([]int64,len(ordens))
-	tempoReforged=make([]int64,len(ordens))
+	tempoBaseline=make([]int,len(ordens))
+	tempoReforged=make([]int,len(ordens))
 	
 	for contOrdem=0;contOrdem<len(ordens);contOrdem++{
 		ordem=ordens[contOrdem]
@@ -42,25 +51,33 @@ func TempoExecucao(){
 			
 			//baseline
 			inicio=time.Now()
-			determinante.Determinante(copiaBaseline)
+			detBaseline=determinante.Determinante(copiaBaseline)
 			duracao=time.Since(inicio)
-			tempoExperimento=duracao.Nanoseconds()
+			tempoExperimento=int(duracao.Nanoseconds())
 			tempoBaseline[contOrdem] += tempoExperimento
-			
+			fmt.Printf("Determinante (baseline): %d\n",detBaseline)
 			//prime
 			inicio=time.Now()
-			determinante.DeterminanteReforged(copiaReforged)
+			detOtimizada=determinante.DeterminanteReforged(copiaReforged)
 			duracao=time.Since(inicio)
-			tempoExperimento=duracao.Nanoseconds()
+			tempoExperimento=int(duracao.Nanoseconds())
 			tempoReforged[contOrdem]+=tempoExperimento
+			fmt.Printf("Determinante (otimizada): %d\n",detOtimizada)
+			fmt.Println()
 		}
 		//media
-		tempoBaseline[contOrdem]=tempoBaseline[contOrdem]/int64(repeticoesTotais)
-		tempoReforged[contOrdem]=tempoReforged[contOrdem]/int64(repeticoesTotais)
+		tempoBaseline[contOrdem]=tempoBaseline[contOrdem]/repeticoesTotais
+		tempoReforged[contOrdem]=tempoReforged[contOrdem]/repeticoesTotais
 	}
 	fmt.Println("Resultados médios em nanosegundos:")
 	for contOrdem=0;contOrdem<len(ordens);contOrdem++{
 	fmt.Printf("Ordem: %d | Baseline: %d ns | Reforged: %d ns\n" ,ordens[contOrdem],tempoBaseline[contOrdem],tempoReforged[contOrdem])
+	}
+
+	return ResultadosBenchmark{
+		Ordens: ordens,
+		TempoBaseline: tempoBaseline,
+		TempoReforged: tempoReforged,
 	}
 }
 			

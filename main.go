@@ -5,6 +5,7 @@ import(
 	//"experimentoMatriz/matriz"
 	//"experimentoMatriz/determinante"
 	"experimentoMatriz/benchmark"
+	"experimentoMatriz/grafico"
 )
 
 func main(){
@@ -19,5 +20,7 @@ func main(){
 	//determinante.Determinante(mat)
 	//fmt.Println("esse e o valor da determinante bem mais rapido: ")
 	//determinante.DeterminanteReforged(mat)
-	benchmark.TempoExecucao()
+	var resultados benchmark.ResultadosBenchmark
+	resultados=benchmark.TempoExecucao()
+	grafico.GerarGraficos(resultados)
 }

@@ -42,18 +42,18 @@ func Determinante(mat [][]int) int{
 	if(ehQuadrada){		
 		switch (ordem) {
 		    case 1:
-		        fmt.Println("Ordem 1")
+		       // fmt.Println("Ordem 1")
 		    	det = DetOrdem1(mat)
 		    case 2:
-		    	fmt.Println("Ordem 2")
+		    	//fmt.Println("Ordem 2")
 		    	det = DetOrdem2(mat)
 		    default: 
-		        fmt.Println("Ordem ", ordem)
+		        //fmt.Println("Ordem ", ordem)
 		    	det = DetOrdemN(mat)
 			
 		}
 		//matriz.IniciaMatrizRandomica(mat)
-		fmt.Println("Det ", det)
+		//fmt.Println("Det ", det)
 		
 	} else {
 		fmt.Println("Matriz nao eh quadrada!! retornando 0")

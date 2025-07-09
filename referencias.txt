@@ -3,7 +3,16 @@ https://pkg.go.dev/math/rand#Rand.Seed - 22 junho
 https://www.geeksforgeeks.org/software-engineering/dont-repeat-yourselfdry-in-software-development/ - 27 junho
 https://medium.com/@hcode.tech/how-code-optimization-saves-businesses-money-ff9c5ce3b941 - 01 de julho
 https://medium.com/@cacmscdm/code-optimizations-advantages-quicker-execution-less-resource-consumption-and-better-user-7681d2f385f3 -01 de julho
-https://www.techtarget.com/whatis/definition/log-log-file - 02 de julho
 https://awebytes.wordpress.com/2021/10/30/golang-notas-data-science-basico/ - 02 de julho
 https://www.geeksforgeeks.org/go-language/how-to-copy-one-slice-into-another-slice-in-golang/ -02 de julho
 https://github.com/go-echarts/go-echarts - 02 de julho
+https://super.abril.com.br/tecnologia/por-que-computadores-nao-conseguem-gerar-numeros-realmente-aleatorios/ - 03 de julho
+https://man-nigeria.org.ng/issues/ABA-SCI-2019-54.pdf - 03 de julho
+https://mathshistory.st-andrews.ac.uk/HistTopics/Matrices_and_determinants/ -03 de julho
+https://pkg.go.dev/github.com/go-echarts/go-echarts/v2/charts#pkg-variables - 04 de julho
+https://pkg.go.dev/fmt -04 de julho 
+https://dev.to/venom90/error-handling-in-golang-19m0 -04 de julho
+https://homepages.dcc.ufmg.br/~chaimo/paa/Aula%202%20-%20Complexidade%20Assintotica.pdf - 05 de julho
+
+
+https://daily.dev/blog/what-is-modular-programming#modules-and-apis
